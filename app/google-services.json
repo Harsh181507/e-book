@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "803156211897",
+    "project_id": "e-book-ead",
+    "storage_bucket": "e-book-ead.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803156211897:android:a4ce4d78ee548954530368",
+        "android_client_info": {
+          "package_name": "com.example.e_book"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBifxqIZxhjnmqSnO2BMEy3yQx7T1IHM78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
