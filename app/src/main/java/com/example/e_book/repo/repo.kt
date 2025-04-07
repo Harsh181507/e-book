@@ -80,6 +80,33 @@ class repo @Inject constructor(val firebaseDatabase: FirebaseDatabase) {
             close()
         }
     }
+    fun getAllBooksByCategory(category:String): Flow<ResultState<List<BookModels>>> = callbackFlow {
+
+        trySend(ResultState.Loading)
+
+        val postListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                var items: List<BookModels> = emptyList()
+                items=dataSnapshot.children.filter {
+                    it.getValue<BookModels>()!!.bookCategory==category
+                }.map {
+                    it.getValue<BookModels>()!!
+                }
+                trySend(ResultState.Success(items))
+
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+
+                trySend(ResultState.Error(databaseError.message))
+            }
+        }
+        firebaseDatabase.reference.child(BOOK_PATH).addValueEventListener(postListener)
+      awaitClose{
+          close()
+      }
+    }
 
 
 }

@@ -1,6 +1,7 @@
 package com.example.e_book.presentation.screens
 
 import android.widget.Toast
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -36,6 +37,7 @@ import coil3.compose.AsyncImage
 import coil3.compose.SubcomposeAsyncImage
 import com.example.e_book.viewModel.MyViewModels
 import com.example.e_book.R
+import com.example.e_book.presentation.nav.Routes
 
 @Composable
 fun CategoryScreen(
@@ -91,7 +93,9 @@ fun EachCategoryItem(
     CategoryName: String = "Category Name",
     navController: NavController
 ) {
-    Card(modifier = Modifier.padding(8.dp)) {
+    Card(modifier = Modifier.padding(8.dp).clickable{
+        navController.navigate(Routes.BookByCategory(category = CategoryName))
+    }) {
         Column(
             modifier = Modifier.size(200.dp),
             horizontalAlignment = Alignment.CenterHorizontally,

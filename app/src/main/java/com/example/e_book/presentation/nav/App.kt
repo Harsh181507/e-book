@@ -9,6 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.example.e_book.presentation.screens.BookByCategory
 import com.example.e_book.presentation.screens.TabScreen
 import com.example.e_book.presentation.screens.pdfViewScreen
 
@@ -29,6 +30,12 @@ fun App(){
             pdfViewScreen(BookUrl = data.BookUrl)
 
         }
+        composable<Routes.BookByCategory>{
+            val data=it.toRoute<Routes.BookByCategory>()
+            BookByCategory(navController=navController,category = data.category)
+
+        }
+
 
 
     }

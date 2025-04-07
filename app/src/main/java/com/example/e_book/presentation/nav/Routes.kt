@@ -8,7 +8,9 @@ sealed class Routes {
     object Home
 
     @Serializable
-    object BookByCategory
+    data class BookByCategory(
+        val category: String
+    )
 
     @Serializable
     object AllBooks
