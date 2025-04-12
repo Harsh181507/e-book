@@ -38,7 +38,6 @@ https://github.com/Harsh181507/e-book.git
 
 ![WhatsApp Image 2025-04-09 at 02 32 02_74a1f8f3](https://github.com/user-attachments/assets/5059e494-d176-4e12-9082-509bcf20f4db)
 
-![Uploading WhatsApp Image 2025-04-09 at 02.32.02_960b86dd.jpg…]()
 
 
 
